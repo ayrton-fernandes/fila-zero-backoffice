@@ -1,0 +1,57 @@
+@import "tailwindcss";
+@import "primereact/resources/themes/lara-light-blue/theme.css";
+@import "primereact/resources/primereact.min.css";
+@import "primeicons/primeicons.css";
+
+:root {
+  --root-font-size: 16px;
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body {
+  color: #000000;
+  background: #fff !important;
+  font-size: 1rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.responsive-img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}
+
+.contrast-img {
+  filter: brightness(0) invert(1);
+}
+
+/* Custom ProgressBar Styles */
+.progress-bar-custom .p-progressbar {
+  height: 8px;
+  background-color: #e5e7eb;
+  border-radius: 9999px;
+}
+
+.progress-bar-custom .p-progressbar-value {
+  background: linear-gradient(90deg, #22c55e 0%, #16a34a 100%);
+  border-radius: 9999px;
+}

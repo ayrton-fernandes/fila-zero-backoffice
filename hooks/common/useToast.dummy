@@ -1,0 +1,7 @@
+import { toast } from "react-toastify"; // Placeholder if lib not available, checking context
+
+// Simple toast hook if not already present. 
+// Actually farmacia had one in components/ToastProvider.
+// I will create a simple wrapper or use a library if available.
+// fila-zero-backoffice/hooks/common/useToast.ts existed in file list.
+// Let me read it first to ensure compatibility.

@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Fila Zero - Backoffice
 
-## Getting Started
+Sistema de gestão Fila Zero com autenticação e painel administrativo.
 
-First, run the development server:
+## 📋 Pré-requisitos
+
+- Node.js 18+ 
+- npm ou yarn
+
+## 🔧 Instalação
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Instalar dependências
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ▶️ Executar
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Desenvolvimento
+npm run dev
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Build para produção
+npm run build
 
-## Learn More
+# Executar produção
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 🔐 Acesso
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **URL**: http://localhost:3000
+- **Página Inicial**: Redireciona para `/login`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Credenciais de Teste (Mock)
 
-## Deploy on Vercel
+Como ainda não temos API, o login aceita qualquer email válido:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Email**: `teste@email.com` (ou qualquer email válido)
+- **Senha**: `123456` (mínimo 6 caracteres, sem espaços)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📁 Estrutura do Projeto
+
+```
+fila-zero-backoffice/
+├── app/                    # Rotas Next.js (App Router)
+│   ├── (auth)/            # Rotas de autenticação
+│   ├── (protected)/       # Rotas protegidas
+│   └── providers.tsx      # Providers globais
+├── components/            # Componentes React
+├── domain/               # Camada de domínio
+├── hooks/                # Custom hooks
+├── services/             # Serviços (API)
+├── utils/                # Utilitários e validações
+└── middleware.ts         # Middleware de autenticação
+```
+
+## 🛡️ Autenticação
+
+### Fluxo de Autenticação
+
+1. Usuário acessa rota protegida sem token → Redireciona para `/login`
+2. Usuário faz login → Token salvo no cookie `token`
+3. Usuário autenticado acessa `/login` → Redireciona para `/home`
+4. Usuário faz logout → Remove token e redireciona para `/login`
+
+## ✅ Validações (Zod)
+
+- **Email**: Formato válido de email
+- **Senha**: Mínimo 6 caracteres, máximo 20, sem espaços
+
+## 🔄 Próximas Etapas
+
+1. Substituir mock do login por API real
+2. Implementar "Esqueci a senha"
+3. Adicionar dashboard com dados
+4. Implementar gestão de usuários
+
+## 📝 Convenções de Código
+
+- **Funções/variáveis/classes**: Inglês
+- **Textos/labels/mensagens**: Português
+- **TypeScript**: Evitar `any`
+
+---
+
+**Desenvolvido com ❤️ para Fila Zero**

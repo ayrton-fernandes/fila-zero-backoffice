@@ -1,0 +1,59 @@
+.container {
+  width: 100%;
+}
+
+.dropzone {
+  border: 2px dashed #d1d5db;
+  border-radius: 8px;
+  padding: 3rem 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #fafafa;
+
+  &:hover {
+    border-color: #1351b4;
+    background-color: #f0f5ff;
+  }
+
+  &.dragging {
+    border-color: #1351b4;
+    background-color: #e6f0ff;
+    border-width: 3px;
+  }
+}
+
+.iconContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.icon {
+  font-size: 3rem;
+  color: #6b7280;
+}
+
+.title {
+  margin-bottom: 0.5rem;
+  color: #1f2937;
+}
+
+.subtitle {
+  margin-bottom: 0.5rem;
+  color: #6b7280;
+}
+
+.formats {
+  color: #9ca3af;
+}
+
+.error {
+  color: #dc2626;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+.hiddenInput {
+  display: none;
+}
